@@ -168,6 +168,7 @@ img {
   align-items: center;
   gap: 30px;
   margin-left: auto;
+  
 }
 
 .nav-links {
@@ -276,8 +277,8 @@ img {
 .mega-menu {
   position: absolute;
   top: 100%;
-  left: 12px;
-  right: 12px;
+  /* left: 12px; */
+  /* right: 12px; */
   z-index: 2000;
   background: var(--white);
   border: 1px solid var(--border);
@@ -610,10 +611,10 @@ img {
     pointer-events: none;
     transform: translateY(-12px);
 
-    transition:
-      opacity 0.28s ease,
-      transform 0.32s ease,
-      visibility 0.28s ease;
+transition:
+    transform 0.35s ease,
+    opacity 0.25s ease,
+    visibility 0.35s ease;
   }
 
   .nav-content.is-open {
