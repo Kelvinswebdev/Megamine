@@ -1,23 +1,86 @@
 
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+/* =========================================
+   MEGAMINE SOLUTION AFRICA
+   Main Stylesheet
+========================================= */
 
 :root {
-  --navy: #111a2e;
-  --navy-light: #1c2941;
-  --lime: #b5df42;
-  --text: #192437;
-  --muted: #697588;
-  --surface: #f7f9fc;
-  --border: #e8edf2;
-  --white: #fff;
-  --radius: 18px;
-  --ease: cubic-bezier(.22, 1, .36, 1);
+  --orange: #c65b2a;
+  --orange-dark: #a9471d;
+  --charcoal: #292b2d;
+  --text: #414854;
+  --muted: #737983;
+  --border: #e6e7e8;
+  --white: #ffffff;
+  --soft: #f6f6f4;
+  --header-height: 86px;
+  --container: 1320px;
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: montserrat, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 4px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: min(var(--container), calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  color: var(--orange);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
 
 .site-header {
   position: relative;
@@ -782,7 +845,6 @@
     transition-duration: .01ms !important;
   }
 }
-
 
 
 
