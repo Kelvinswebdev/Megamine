@@ -1723,7 +1723,7 @@ button {
 
 .who-highlight p {
   margin-top: 4px;
-  color: #777d84;
+  color: #a6a7a8;
   font-size: 12px;
   line-height: 1.6;
 }
@@ -1792,6 +1792,7 @@ button {
     width: calc(100% - 40px);
     grid-template-columns: 1fr;
     gap: 38px;
+    padding: 0px 30px;
   }
 
   .who-visual {
@@ -1803,7 +1804,9 @@ button {
   }
 
   .who-description {
-    font-size: 14px;
+    font-size: 13px;
+    color: gray;
+    line-height: 1.6;
   }
 }
 
