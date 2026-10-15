@@ -2135,6 +2135,14 @@ button {
     margin-bottom: 48px;
   }
 
+   .network-heading  h2{
+    grid-template-columns: 1fr 1.5fr;
+    gap: 25px;
+    font-size: ;
+    margin-bottom: 48px;
+  }
+
+
   .network-heading > p {
     grid-column: 2;
     justify-self: start;
@@ -2182,7 +2190,7 @@ button {
   }
 
   .network-heading h2 {
-    font-size: clamp(31px, 8vw, 43px);
+    font-size: 35px;
     letter-spacing: -1.3px;
   }
 
