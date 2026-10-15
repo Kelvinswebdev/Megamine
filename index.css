@@ -1222,13 +1222,14 @@ button {
 
 
 .gham-news {
-  padding: 15px 5%;
+  padding: 15px 40px;
   background: #fff;
 }
 
 .gham-news__container {
   max-width: 1400px;
   margin-top: 100px;
+  padding: 0px 40px;
 }
 
 .gham-news__header {
@@ -1269,6 +1270,8 @@ button {
 .gham-news__card {
   border: 1px solid #e5e2db;
   background: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 7px 30px -20px;
   transition: box-shadow 250ms ease, transform 250ms ease;
 }
 
