@@ -1,142 +1,96 @@
 
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector("#menu-toggle");
-  const navContent = document.querySelector("#nav-content");
-  const navbar = document.querySelector(".navbar");
+const menuToggle = document.getElementById("menu-toggle");
+const navRight = document.getElementById("nav-right");
+const mobileClose = document.getElementById("mobile-close");
+const overlay = document.getElementById("overlay");
+const dropdownButtons = document.querySelectorAll(".dropdown-toggle");
 
-  const megaItems = document.querySelectorAll(".has-mega");
-  const megaTriggers = document.querySelectorAll(".mega-trigger");
+// Open mobile menu
+menuToggle.addEventListener("click", () => {
+  navRight.classList.add("active");
+  overlay.classList.add("active");
+  menuToggle.classList.add("active");
+  menuToggle.setAttribute("aria-expanded", "true");
+  document.body.classList.add("menu-open");
+});
 
-  const mobileQuery = window.matchMedia("(max-width: 850px)");
+// Close mobile menu
+function closeMenu() {
+  navRight.classList.remove("active");
+  overlay.classList.remove("active");
+  menuToggle.classList.remove("active");
+  menuToggle.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("menu-open");
 
-  if (!menuToggle || !navContent || !navbar) {
-    console.error("Navigation elements not found.");
-    return;
-  }
+  // Close all dropdowns
+  document.querySelectorAll(".nav-item.open").forEach(item => {
+    item.classList.remove("open");
 
-  // Close all mega menus
-  function closeMegaMenus() {
-    megaTriggers.forEach((trigger) => {
-      const menuId = trigger.getAttribute("aria-controls");
-      const menu = document.getElementById(menuId);
+    const button = item.querySelector(".dropdown-toggle");
+    const panel = item.querySelector(".mega-menu, .dropdown-menu");
 
-      trigger.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-expanded", "false");
 
-      if (menu) {
-        menu.hidden = true;
+    if (panel) {
+      panel.style.maxHeight = "";
+    }
+  });
+}
+
+mobileClose.addEventListener("click", closeMenu);
+overlay.addEventListener("click", closeMenu);
+
+// Open and close dropdowns
+dropdownButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const item = button.parentElement;
+    const panel = item.querySelector(".mega-menu, .dropdown-menu");
+    const isOpen = item.classList.contains("open");
+
+    // Close other dropdowns
+    document.querySelectorAll(".nav-item.open").forEach(openItem => {
+      openItem.classList.remove("open");
+
+      const openButton = openItem.querySelector(".dropdown-toggle");
+      const openPanel = openItem.querySelector(".mega-menu, .dropdown-menu");
+
+      openButton.setAttribute("aria-expanded", "false");
+
+      if (openPanel) {
+        openPanel.style.maxHeight = "";
       }
     });
-  }
 
-  // Open one mega menu
-  function openMegaMenu(trigger) {
-    const menuId = trigger.getAttribute("aria-controls");
-    const menu = document.getElementById(menuId);
+    // Open selected dropdown
+    if (!isOpen) {
+      item.classList.add("open");
+      button.setAttribute("aria-expanded", "true");
 
-    if (!menu) return;
-
-    closeMegaMenus();
-
-    menu.hidden = false;
-    trigger.setAttribute("aria-expanded", "true");
-  }
-
-  // Toggle dropdown on click only
-  megaTriggers.forEach((trigger) => {
-    trigger.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-
-      const isOpen =
-        trigger.getAttribute("aria-expanded") === "true";
-
-      if (isOpen) {
-        closeMegaMenus();
-      } else {
-        openMegaMenu(trigger);
-      }
-    });
-  });
-
-  // Mobile hamburger
-  function openMobileMenu() {
-    navContent.classList.add("is-open");
-    menuToggle.setAttribute("aria-expanded", "true");
-    menuToggle.setAttribute("aria-label", "Close navigation menu");
-  }
-
-  function closeMobileMenu() {
-    navContent.classList.remove("is-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open navigation menu");
-    closeMegaMenus();
-  }
-
-  menuToggle.addEventListener("click", (event) => {
-    event.stopPropagation();
-
-    const isOpen =
-      menuToggle.getAttribute("aria-expanded") === "true";
-
-    if (isOpen) {
-      closeMobileMenu();
-    } else {
-      openMobileMenu();
-    }
-  });
-
-  // Close when clicking outside the navbar
-  document.addEventListener("click", (event) => {
-    if (!navbar.contains(event.target)) {
-      closeMegaMenus();
-
-      if (navContent.classList.contains("is-open")) {
-        closeMobileMenu();
+      // On mobile, expand the dropdown vertically
+      if (window.innerWidth <= 800) {
+        panel.style.maxHeight = panel.scrollHeight + "px";
       }
     }
   });
+});
 
-  // Close menus with Escape
-  document.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape") return;
-
-    const openTrigger = Array.from(megaTriggers).find(
-      (trigger) =>
-        trigger.getAttribute("aria-expanded") === "true"
-    );
-
-    closeMegaMenus();
-
-    if (openTrigger) {
-      openTrigger.focus();
-    }
-
-    if (navContent.classList.contains("is-open")) {
-      closeMobileMenu();
-      menuToggle.focus();
-    }
-  });
-
-  // Close after clicking a navigation link
-  navContent.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      closeMegaMenus();
-
-      if (mobileQuery.matches) {
-        closeMobileMenu();
-      }
-    });
-  });
-
-  // Reset navigation when changing screen sizes
-  function resetNavigation() {
-    closeMegaMenus();
-    closeMobileMenu();
+// Close menu when clicking outside
+document.addEventListener("click", event => {
+  if (!event.target.closest(".header")) {
+    closeMenu();
   }
+});
 
-  if (mobileQuery.addEventListener) {
-    mobileQuery.addEventListener("change", resetNavigation);
-  } else {
-    mobileQuery.addListener(resetNavigation);
+// Close menu with Escape
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    closeMenu();
+  }
+});
+
+// Reset menu when switching to desktop
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 800) {
+    closeMenu();
   }
 });

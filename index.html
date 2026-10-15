@@ -28,235 +28,198 @@
 
   
 
-<header class="site-header" id="siteHeader">
+<header class="header">
+
+  <!-- TOP BAR -->
   <div class="topbar">
-    <div class="topbar-inner">
-      <span>Industrial solutions. Built for performance.</span>
-      <div class="topbar-contact">
-        <a href="tel:+233000000000">+233 XX XXX XXXX</a>
-        <a href="mailto:info@megamine.com">info@megamine.com</a>
-      </div>
+    <a href="https://linkedin.com" aria-label="LinkedIn">in</a>
+
+    <div class="topbar-right">
+      <a href="tel:+233247887766">☎ +233 247 88 77 66</a>
+      <span>● Accra, Ghana</span>
+      <a href="mailto:sales@megamine.com">✉ sales@megamine.com</a>
     </div>
   </div>
 
-  <nav class="navbar" aria-label="Main navigation">
-    <a href="/" class="brand" aria-label="Megamine Solutions Africa home">
-      <span class="brand-symbol">M<span>+</span></span>
-      <span class="brand-copy">
-        <strong>MEGAMINE</strong>
-        <small>SOLUTIONS AFRICA LIMITED</small>
-      </span>
-    </a>
+  <!-- MAIN NAVBAR -->
+  <nav class="navbar">
 
-    <button
-      class="menu-toggle"
-      id="menu-toggle"
-      aria-label="Open navigation"
-      aria-expanded="false"
-      aria-controls="nav-content"
-    >
+    <div class="nav-left">
+      <a href="/" class="logo">
+        <img src="pics/logo.png "
+             alt="Megamine Solutions Africa Limited">
+      </a>
+    </div>
+
+    <div class="nav-right" id="nav-right">
+
+      <button class="mobile-close" id="mobile-close"
+              aria-label="Close menu">✕</button>
+
+      <!-- SOLUTIONS -->
+      <div class="nav-item">
+        <button class="nav-link dropdown-toggle"
+                aria-expanded="false">
+          Our Solutions 
+        </button>
+
+        <div class="mega-menu">
+
+          <div class="mega-heading">
+            <span>OUR EXPERTISE</span>
+            <h2>Industrial solutions<br>that move business forward.</h2>
+            <p>Explore our products and technologies designed to support reliable, efficient operations.</p>
+            <a href="solutions.html">Explore all solutions ↗</a>
+          </div>
+
+          <div class="solutions-grid">
+
+            <a href="electrical.html" class="solution">
+              <img src="images/electrical.jpg" alt="">
+              <div>
+                <h3>Electrical Solutions</h3>
+                <p>Electrical control, protection and automation for industrial operations.</p>
+              </div>
+            </a>
+
+            <a href="conveying.html" class="solution">
+              <img src="images/conveying.jpg" alt="">
+              <div>
+                <h3>Conveying Solutions</h3>
+                <p>Conveyor belts, reliable fastening systems and durable rollers.</p>
+              </div>
+            </a>
+
+            <a href="screening.html" class="solution">
+              <img src="images/screening.jpg" alt="">
+              <div>
+                <h3>Screening Solutions</h3>
+                <p>Screening equipment and wear parts for demanding applications.</p>
+              </div>
+            </a>
+
+            <a href="drilling.html" class="solution">
+              <img src="images/drilling.jpg" alt="">
+              <div>
+                <h3>Drilling Consumables</h3>
+                <p>Essential drilling tools and accessories for efficient operations.</p>
+              </div>
+            </a>
+
+            <a href="concrete-plants.html" class="solution">
+              <img src="images/concrete-plant.jpg" alt="">
+              <div>
+                <h3>Concrete Plant Solutions</h3>
+                <p>Reliable equipment for efficient concrete production.</p>
+              </div>
+            </a>
+
+            <a href="motors-gearboxes.html" class="solution">
+              <img src="images/motors.jpg" alt="">
+              <div>
+                <h3>Electric Motors & Gearboxes</h3>
+                <p>Industrial motors and gear drives built for dependable performance.</p>
+              </div>
+            </a>
+
+            <a href="weighing.html" class="solution">
+              <img src="images/weighing.jpg" alt="">
+              <div>
+                <h3>Weighing Solutions</h3>
+                <p>Precision weighing and measurement for industrial processes.</p>
+              </div>
+            </a>
+
+            <a href="pneumatic.html" class="solution">
+              <img src="images/pneumatic.jpg" alt="">
+              <div>
+                <h3>Pneumatic Solutions</h3>
+                <p>Air-powered components and systems for industrial automation.</p>
+              </div>
+            </a>
+
+            <a href="hydraulic.html" class="solution">
+              <img src="images/hydraulic.jpg" alt="">
+              <div>
+                <h3>Hydraulic Solutions</h3>
+                <p>Hydraulic components and systems for demanding applications.</p>
+              </div>
+            </a>
+
+            <a href="material-handling.html" class="solution">
+              <img src="images/material-handling.jpg" alt="">
+              <div>
+                <h3>Material Handling</h3>
+                <p>Equipment and solutions for moving materials efficiently.</p>
+              </div>
+            </a>
+
+            <a href="handling-equipment.html" class="solution">
+              <img src="images/handling-equipment.jpg" alt="">
+              <div>
+                <h3>Handling Equipment</h3>
+                <p>Pallet trucks, stackers and equipment for material movement.</p>
+              </div>
+            </a>
+
+            <a href="power-transmission.html" class="solution">
+              <img src="images/power-transmission.jpg" alt="">
+              <div>
+                <h3>Mechanical Power Transmission</h3>
+                <p>Mechanical drive components for efficient power transfer.</p>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- INDUSTRIES -->
+      <div class="nav-item">
+        <button class="nav-link dropdown-toggle"
+                aria-expanded="false">
+          Industries 
+        </button>
+
+        <div class="dropdown-menu">
+          <a href="mining.html">Mining & Minerals</a>
+          <a href="cement.html">Cement & Aggregates</a>
+          <a href="manufacturing.html">Manufacturing</a>
+          <a href="construction.html">Construction</a>
+          <a href="energy.html">Energy & Utilities</a>
+        </div>
+      </div>
+
+      <a href="brands.html" class="nav-link">Our Brands</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+
+      <a href="contact.html" class="nav-button">
+        Let's Talk <span>↗</span>
+      </a>
+
+      <!-- MOBILE CONTACT DETAILS -->
+      <div class="mobile-contact">
+        <p>LET'S TALK BUSINESS</p>
+        <a href="mailto:sales@megamine.com">sales@megamine.com</a>
+        <a href="tel:+233247887766">Call our team ↗</a>
+      </div>
+
+    </div>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button class="menu-toggle" id="menu-toggle"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav-right">
       <span></span>
       <span></span>
     </button>
 
-    <div class="nav-backdrop" id="nav-backdrop"></div>
-
-    <div class="nav-content" id="nav-content">
-      <div class="mobile-drawer-head">
-        <span class="drawer-label">NAVIGATION</span>
-        <button class="drawer-close" id="drawer-close"
-          aria-label="Close navigation">✕</button>
-      </div>
-
-      <div class="mobile-drawer-body">
-        <div class="nav-links">
-
-          <!-- SOLUTIONS -->
-          <div class="nav-item has-dropdown">
-            <button class="nav-link mega-trigger"
-              aria-expanded="false" aria-controls="solutions-menu">
-              Solutions <span class="chevron"></span>
-            </button>
-
-            <div class="mega-menu solutions-mega" id="solutions-menu">
-              <div class="mega-intro">
-                <span class="eyebrow">WHAT WE DO</span>
-                <h2>Solutions for<br>industry in motion.</h2>
-                <p>Reliable products and technologies that keep your operations moving.</p>
-                <a href="/solutions/" class="mega-cta">
-                  Explore all solutions <span>↗</span>
-                </a>
-              </div>
-
-              <div class="mega-grid">
-                <a href="/solutions/electrical/" class="solution-card">
-                  <span class="solution-icon">ϟ</span>
-                  <span class="solution-info">
-                    <strong>Electrical Solutions</strong>
-                    <small>Power, protection and control systems.</small>
-                  </span>
-                  <span class="card-arrow">↗</span>
-                </a>
-
-                <a href="/solutions/conveying/" class="solution-card">
-                  <span class="solution-icon">⇢</span>
-                  <span class="solution-info">
-                    <strong>Conveying Solutions</strong>
-                    <small>Conveyor belts, rollers and components.</small>
-                  </span>
-                  <span class="card-arrow">↗</span>
-                </a>
-
-                <a href="/solutions/screening/" class="solution-card">
-                  <span class="solution-icon">▦</span>
-                  <span class="solution-info">
-                    <strong>Screening Solutions</strong>
-                    <small>Screening equipment and wear parts.</small>
-                  </span>
-                  <span class="card-arrow">↗</span>
-                </a>
-
-                <a href="/solutions/drilling/" class="solution-card">
-                  <span class="solution-icon">⌁</span>
-                  <span class="solution-info">
-                    <strong>Drilling Consumables</strong>
-                    <small>Tools and accessories for drilling.</small>
-                  </span>
-                  <span class="card-arrow">↗</span>
-                </a>
-
-                <a href="/solutions/concrete-plants/" class="solution-card">
-                  <span class="solution-icon">▤</span>
-                  <span class="solution-info">
-                    <strong>Concrete Plant Solutions</strong>
-                    <small>Equipment for concrete production.</small>
-                  </span>
-                  <span class="card-arrow">↗</span>
-                </a>
-
-                <a href="/solutions/motors-gearboxes/" class="solution-card">
-                  <span class="solution-icon">⚙</span>
-                  <span class="solution-info">
-                    <strong>Motors & Gearboxes</strong>
-                    <small>Industrial drives and power systems.</small>
-                  </span>
-                  <span class="card-arrow">↗</span>
-                </a>
-
-                <a href="/solutions/weighing/" class="solution-card">
-                  <span class="solution-icon">◈</span>
-                  <span class="solution-info">
-                    <strong>Weighing Solutions</strong>
-                    <small>Accurate industrial measurement.</small>
-                  </span>
-                  <span class="card-arrow">↗</span>
-                </a>
-
-                <a href="/solutions/pneumatics/" class="solution-card">
-                  <span class="solution-icon">⇄</span>
-                  <span class="solution-info">
-                    <strong>Pneumatic Solutions</strong>
-                    <small>Air-powered automation components.</small>
-                  </span>
-                  <span class="card-arrow">↗</span>
-                </a>
-
-                <a href="/solutions/hydraulics/" class="solution-card">
-                  <span class="solution-icon">≋</span>
-                  <span class="solution-info">
-                    <strong>Hydraulic Solutions</strong>
-                    <small>Fluid power and hydraulic systems.</small>
-                  </span>
-                  <span class="card-arrow">↗</span>
-                </a>
-
-                <a href="/solutions/material-handling/" class="solution-card">
-                  <span class="solution-icon">⇧</span>
-                  <span class="solution-info">
-                    <strong>Material Handling</strong>
-                    <small>Reliable movement of materials.</small>
-                  </span>
-                  <span class="card-arrow">↗</span>
-                </a>
-
-                <a href="/solutions/handling-equipment/" class="solution-card">
-                  <span class="solution-icon">▣</span>
-                  <span class="solution-info">
-                    <strong>Handling Equipment</strong>
-                    <small>Equipment for efficient logistics.</small>
-                  </span>
-                  <span class="card-arrow">↗</span>
-                </a>
-
-                <a href="/solutions/power-transmission/" class="solution-card">
-                  <span class="solution-icon">⟳</span>
-                  <span class="solution-info">
-                    <strong>Power Transmission</strong>
-                    <small>Mechanical drives and components.</small>
-                  </span>
-                  <span class="card-arrow">↗</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- INDUSTRIES -->
-          <div class="nav-item has-dropdown">
-            <button class="nav-link dropdown-trigger"
-              aria-expanded="false" aria-controls="industries-menu">
-              Industries <span class="chevron"></span>
-            </button>
-
-            <div class="dropdown-menu" id="industries-menu">
-              <a href="/industries/mining/">
-                <span>Mining & Minerals</span><span>↗</span>
-              </a>
-              <a href="/industries/cement/">
-                <span>Cement & Aggregates</span><span>↗</span>
-              </a>
-              <a href="/industries/manufacturing/">
-                <span>Manufacturing</span><span>↗</span>
-              </a>
-              <a href="/industries/construction/">
-                <span>Construction</span><span>↗</span>
-              </a>
-              <a href="/industries/energy/">
-                <span>Energy & Utilities</span><span>↗</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- BRANDS -->
-          <a href="/brands/" class="nav-link simple-link">Our Brands</a>
-
-          <!-- COMPANY -->
-          <div class="nav-item has-dropdown">
-            <button class="nav-link dropdown-trigger"
-              aria-expanded="false" aria-controls="company-menu">
-              Company <span class="chevron"></span>
-            </button>
-
-            <div class="dropdown-menu company-menu" id="company-menu">
-              <a href="/about/"><span>About Megamine</span><span>↗</span></a>
-              <a href="/about/our-team/"><span>Our Team</span><span>↗</span></a>
-              <a href="/careers/"><span>Careers</span><span>↗</span></a>
-              <a href="/contact/"><span>Contact Us</span><span>↗</span></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="nav-actions">
-          <a href="/contact/" class="contact-link">Let's Talk <span>↗</span></a>
-        </div>
-
-        <div class="mobile-contact">
-          <span>HAVE A PROJECT IN MIND?</span>
-          <a href="mailto:info@megamine.com">info@megamine.com</a>
-          <a href="tel:+233000000000">Call our team ↗</a>
-        </div>
-      </div>
-    </div>
   </nav>
+
+  <div class="overlay" id="overlay"></div>
+
 </header>
 
 
