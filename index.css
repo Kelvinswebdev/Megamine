@@ -722,7 +722,7 @@ button {
 .hero-content {
   position: absolute;
   top: 45%;
-  left: 50%;
+  left: 25%;
   z-index: 2;
   transform: translate(-50%, -40%);
   padding-top: 0;
@@ -733,6 +733,18 @@ button {
     opacity 0.65s ease,
     visibility 0.65s;
 }
+
+@media (max-width: 700px) {
+  .hero-content {
+    /* left: 50%; */
+    position: relative;
+    bottom: 30%;
+  }
+
+
+  }
+
+
 
 .hero-slide.is-active .hero-content {
   opacity: 1;
@@ -762,7 +774,7 @@ button {
   margin-top: 27px;
   font-family: montserrat, sans-serif;
   color: #fff;
-  font-size: clamp(48px, 6.4vw, 91px);
+  font-size: 50px;
   font-weight: 250;
   line-height: 1.04;
   letter-spacing: -4px;
