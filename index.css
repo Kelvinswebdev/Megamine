@@ -736,9 +736,14 @@ button {
 
 @media (max-width: 700px) {
   .hero-content {
-    /* left: 50%; */
+    left: 40%;
     position: relative;
-    bottom: 30%;
+    /* background-color: red; */
+    padding: 0;
+    display: block;
+    margin: 0;
+    padding: 0px 40px;
+    top: 30%;
   }
 
 
@@ -776,11 +781,28 @@ button {
   color: #fff;
   font-size: 50px;
   font-weight: 250;
-  line-height: 1.04;
+  /* line-height: 1.04; */
   letter-spacing: -4px;
   opacity: 0;
   transform: translateY(35px);
 }
+
+@media (max-width: 700px) {
+.hero-content h1 {
+  max-width: 950px;
+  margin-top: 27px;
+  font-family: montserrat, sans-serif;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 250;
+  /* line-height: 1.04; */
+  letter-spacing: -4px;
+  opacity: 0;
+  transform: translateY(35px);
+}
+
+
+  }
 
 .hero-content h1 span {
   color: #e0a07d;
@@ -1054,12 +1076,10 @@ button {
     height: calc(100svh - var(--header-height, 76px));
   }
 
-  .hero-content {
-    top: 43%;
-  }
+
 
   .hero-content h1 {
-    font-size: clamp(43px, 8vw, 68px);
+    font-size: 25px;
     letter-spacing: -2.5px;
   }
 
@@ -1100,9 +1120,7 @@ button {
     min-height: 650px;
   }
 
-  .hero-content {
-    top: 42%;
-  }
+
 
   .hero-eyebrow {
     font-size: 9px;
@@ -1111,7 +1129,7 @@ button {
 
   .hero-content h1 {
     margin-top: 22px;
-    font-size: clamp(40px, 11vw, 54px);
+    font-size: 25px;
     letter-spacing: -1.8px;
   }
 
