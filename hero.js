@@ -1,207 +1,142 @@
 
-  /* =====================================
-     CINEMATIC HERO SLIDER
-  ===================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".site-header");
+  if (!header) return;
 
-  const hero = document.querySelector(".hero");
+  const menuToggle = header.querySelector("#menu-toggle");
+  const navContent = header.querySelector("#nav-content");
+  const backdrop = header.querySelector(".mobile-nav-backdrop");
+  const triggers = header.querySelectorAll(".mega-trigger");
+  const mobileQuery = window.matchMedia("(max-width: 1100px)");
 
-  if (hero) {
-    const slides = [...hero.querySelectorAll(".hero-slide")];
-    const dots = [...hero.querySelectorAll(".hero-dot")];
-    const nextButton = hero.querySelector(".hero-next");
-    const prevButton = hero.querySelector(".hero-prev");
-    const autoplayButton = hero.querySelector(".hero-autoplay");
-    const progressBar = hero.querySelector(".hero-progress span");
+  if (!menuToggle || !navContent) return;
 
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+  const megaMenus = [...triggers].map((trigger) => {
+    const menu = document.getElementById(
+      trigger.getAttribute("aria-controls")
     );
 
-    const interval = 8000;
+    return {
+      trigger,
+      menu,
+      item: trigger.closest(".has-mega")
+    };
+  }).filter((entry) => entry.menu && entry.item);
 
-    let currentIndex = 0;
-    let timer = null;
-    let paused = reducedMotion.matches;
-    let touchStartX = 0;
+  function closeMegaMenus(except = null) {
+    megaMenus.forEach(({ trigger, menu, item }) => {
+      if (menu === except) return;
 
-    function restartProgress() {
-      if (!progressBar) return;
-
-      progressBar.classList.remove("is-running");
-      progressBar.style.animation = "none";
-
-      // Force a browser reflow to restart the animation.
-      void progressBar.offsetWidth;
-
-      progressBar.style.animation = "";
-
-      if (!paused && !reducedMotion.matches) {
-        progressBar.classList.add("is-running");
-      }
-    }
-
-    function updateAutoplayButton() {
-      if (!autoplayButton) return;
-
-      autoplayButton.setAttribute(
-        "aria-pressed",
-        String(paused)
-      );
-
-      autoplayButton.setAttribute(
-        "aria-label",
-        paused ? "Resume slideshow" : "Pause slideshow"
-      );
-    }
-
-    function showSlide(index) {
-      currentIndex = (index + slides.length) % slides.length;
-
-      slides.forEach((slide, i) => {
-        const active = i === currentIndex;
-
-        slide.classList.toggle("is-active", active);
-        slide.setAttribute("aria-hidden", String(!active));
-
-        const video = slide.querySelector("video");
-
-        if (!video) return;
-
-        if (active) {
-          // Attempt playback only for the active slide.
-          const playPromise = video.play();
-
-          if (playPromise) {
-            playPromise.catch(() => {
-              // Poster remains visible if playback is unavailable.
-            });
-          }
-        } else {
-          video.pause();
-        }
-      });
-
-      dots.forEach((dot, i) => {
-        const active = i === currentIndex;
-
-        dot.classList.toggle("is-active", active);
-        dot.setAttribute("aria-pressed", String(active));
-      });
-
-      restartProgress();
-      startTimer();
-    }
-
-    function stopTimer() {
-      if (timer) {
-        clearTimeout(timer);
-        timer = null;
-      }
-    }
-
-    function startTimer() {
-      stopTimer();
-
-      if (paused || slides.length < 2) return;
-
-      timer = setTimeout(() => {
-        showSlide(currentIndex + 1);
-      }, interval);
-    }
-
-    function nextSlide() {
-      showSlide(currentIndex + 1);
-    }
-
-    function previousSlide() {
-      showSlide(currentIndex - 1);
-    }
-
-    function pauseSlideshow() {
-      paused = true;
-      stopTimer();
-      restartProgress();
-      updateAutoplayButton();
-    }
-
-    function resumeSlideshow() {
-      paused = false;
-      restartProgress();
-      updateAutoplayButton();
-      startTimer();
-    }
-
-    nextButton?.addEventListener("click", nextSlide);
-    prevButton?.addEventListener("click", previousSlide);
-
-    dots.forEach((dot, i) => {
-      dot.addEventListener("click", () => {
-        showSlide(i);
-      });
+      trigger.setAttribute("aria-expanded", "false");
+      item.classList.remove("mega-active");
+      menu.classList.remove("mobile-open");
+      menu.hidden = true;
     });
-
-    autoplayButton?.addEventListener("click", () => {
-      if (paused) {
-        resumeSlideshow();
-      } else {
-        pauseSlideshow();
-      }
-    });
-
-    // Pause when the visitor leaves the browser tab.
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden) {
-        stopTimer();
-
-        slides.forEach((slide) => {
-          slide.querySelector("video")?.pause();
-        });
-      } else {
-        const activeVideo =
-          slides[currentIndex]?.querySelector("video");
-
-        if (activeVideo) {
-          activeVideo.play().catch(() => {});
-        }
-
-        startTimer();
-      }
-    });
-
-    // Support touch gestures on mobile.
-    hero.addEventListener("touchstart", (event) => {
-      touchStartX = event.changedTouches[0].clientX;
-    }, { passive: true });
-
-    hero.addEventListener("touchend", (event) => {
-      const difference =
-        event.changedTouches[0].clientX - touchStartX;
-
-      if (Math.abs(difference) < 60) return;
-
-      if (difference < 0) {
-        nextSlide();
-      } else {
-        previousSlide();
-      }
-    }, { passive: true });
-
-    // Respect reduced-motion preferences.
-    reducedMotion.addEventListener?.("change", (event) => {
-      if (event.matches) {
-        pauseSlideshow();
-      }
-    });
-
-    // Initialize the first slide.
-    slides.forEach((slide, i) => {
-      const video = slide.querySelector("video");
-
-      if (video && i !== 0) {
-        video.pause();
-      }
-    });
-
-    showSlide(0);
-    updateAutoplayButton();
   }
+
+  function openMobileMenu() {
+    navContent.classList.add("is-open");
+    backdrop?.classList.add("is-visible");
+    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "Close navigation menu");
+    document.body.classList.add("mobile-nav-open");
+  }
+
+  function closeMobileMenu() {
+    navContent.classList.remove("is-open");
+    backdrop?.classList.remove("is-visible");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation menu");
+    document.body.classList.remove("mobile-nav-open");
+    closeMegaMenus();
+  }
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen =
+      menuToggle.getAttribute("aria-expanded") === "true";
+
+    if (isOpen) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  });
+
+  backdrop?.addEventListener("click", closeMobileMenu);
+
+  megaMenus.forEach(({ trigger, menu, item }) => {
+    trigger.addEventListener("click", () => {
+      const isOpen =
+        trigger.getAttribute("aria-expanded") === "true";
+
+      closeMegaMenus(menu);
+
+      if (isOpen) {
+        trigger.setAttribute("aria-expanded", "false");
+        item.classList.remove("mega-active");
+        menu.classList.remove("mobile-open");
+        menu.hidden = true;
+        return;
+      }
+
+      menu.hidden = false;
+      trigger.setAttribute("aria-expanded", "true");
+      item.classList.add("mega-active");
+
+      if (mobileQuery.matches) {
+        menu.classList.add("mobile-open");
+      }
+    });
+  });
+
+  /* Close drawer after selecting a navigation link */
+  navContent.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMobileMenu);
+  });
+
+  /* Close menus when clicking outside the header */
+  document.addEventListener("click", (event) => {
+    if (!header.contains(event.target)) {
+      closeMegaMenus();
+
+      if (mobileQuery.matches) {
+        closeMobileMenu();
+      }
+    }
+  });
+
+  /* Escape key closes the drawer or dropdown */
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+
+    const openMenu = megaMenus.find(
+      ({ trigger }) =>
+        trigger.getAttribute("aria-expanded") === "true"
+    );
+
+    if (openMenu) {
+      closeMegaMenus();
+      openMenu.trigger.focus();
+      return;
+    }
+
+    if (menuToggle.getAttribute("aria-expanded") === "true") {
+      closeMobileMenu();
+      menuToggle.focus();
+    }
+  });
+
+  /* Reset navigation when switching between mobile and desktop */
+  function resetNavigation() {
+    closeMobileMenu();
+    closeMegaMenus();
+  }
+
+  if (mobileQuery.addEventListener) {
+    mobileQuery.addEventListener("change", resetNavigation);
+  } else {
+    mobileQuery.addListener(resetNavigation);
+  }
+
+  resetNavigation();
+});
