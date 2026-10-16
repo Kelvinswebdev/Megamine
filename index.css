@@ -2152,7 +2152,6 @@ button {
    .network-heading  h2{
     grid-template-columns: 1fr 1.5fr;
     gap: 25px;
-
     margin-bottom: 48px;
   }
 
@@ -2204,8 +2203,7 @@ button {
   }
 
   .network-heading h2 {
-    font-size: 55px;
-    font-weight: normal;
+    font-size: 35px;
     letter-spacing: -1.3px;
   }
 
@@ -2732,8 +2730,10 @@ button {
 @media (max-width: 992px) {
 
 
-  .why-mega-grid {
-    width: 100%;
+  .why-mega-container {
+    width: calc(100% - 48px);
+    grid-template-columns: 1fr;
+    gap: 55px;
   }
 }
 
