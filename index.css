@@ -730,14 +730,15 @@ width: 50%;
 
 @media (max-width: 992px) {
  .hero-content {
-   top: 10px;
+   top: 0%;
    left: 7%;
   }
+}
 
-
-
-
-  }
+.hero-content h1{
+  font-family: montserrat;
+/* background-color: red; */
+}
 
 
 
