@@ -2152,7 +2152,7 @@ button {
    .network-heading  h2{
     grid-template-columns: 1fr 1.5fr;
     gap: 25px;
-    font-size: ;
+
     margin-bottom: 48px;
   }
 
@@ -2413,7 +2413,7 @@ button {
   margin:0 auto;
   display: grid;
   padding: 0px 20px;
-  grid-template-columns: 1fr 0.94fr;
+  grid-template-columns: auto auto;
   align-items: center;
   gap: clamp(50px, 7vw, 105px);
 }
@@ -2426,107 +2426,7 @@ button {
 
 }
 
-.why-mega-card {
-  position: relative;
-  min-width: 0;
-  min-height: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 23px 21px;
-  background: linear-gradient(
-    145deg,
-    rgb(255 255 255 / 4%),
-    rgb(255 255 255 / 1.5%)
-  );
-  border: 1px solid rgb(255 255 255 / 10%);
-  transition:
-    background 0.35s ease,
-    border-color 0.35s ease,
-    transform 0.35s ease;
-    background-color: white;
-    border-radius: 10px;
-}
 
-.why-mega-card:hover {
-  background: rgb(255 255 255 / 6%);
-  border-color: rgb(198 91 42 / 65%);
-  transform: translateY(-5px);
-}
-
-.why-mega-card-top {
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 23px;
-}
-
-.why-mega-icon {
-  width: 39px;
-  height: 39px;
-  display: grid;
-  place-items: center;
-  color: #929394;
-}
-
-.why-mega-icon svg {
-  display: block;
-  width: 36px;
-  height: 36px;
-}
-
-.why-mega-index {
-  color: rgb(255 255 255 / 30%);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.why-mega-tag {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-  color: #d68a68;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1.8px;
-}
-
-.why-mega-tag::before {
-  content: "";
-  width: 15px;
-  height: 1px;
-  background: var(--why-orange);
-}
-
-.why-mega-card h3 {
-  color: #b6b6b5;
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.4;
-}
-
-.why-mega-card > p {
-  margin-top: 10px;
-  color: rgb(199, 199, 199);
-  font-size: 12px;
-  line-height: 1.85;
-}
-
-.why-mega-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: auto;
-  padding-top: 19px;
-  color: #d88965;
-  font-size: 11px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: color 0.25s ease;
-}
 
 .why-mega-link span {
   transition: transform 0.25s ease;
@@ -2767,14 +2667,7 @@ button {
     padding: 60px 0;
   }
 
-  .why-mega-container {
-    width: calc(100% - 32px);
-    gap: 43px;
-  }
 
-  .why-mega-grid {
-    gap: 11px;
-  }
 
   .why-mega-card {
     min-height: 255px;
@@ -2832,6 +2725,14 @@ button {
   .why-mega-footer {
     font-size: 8px;
     letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 992px) {
+
+
+  .why-mega-grid {
+    width: 100%;
   }
 }
 
