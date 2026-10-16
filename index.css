@@ -2740,8 +2740,13 @@ button {
   }
 
   .why-mega-grid {
-    max-width: 700px;
+    max-width: 100%;
     grid-template-columns: auto;
+  }
+
+   .why-mega-grid img {
+    max-width: 100%;
+    /* grid-template-columns: auto; */
   }
 
   .why-mega-content {
