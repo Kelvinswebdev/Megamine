@@ -635,8 +635,7 @@ button {
   --hero-duration: 8s;
 
   position: relative;
-  isolation: isolate;
-  min-height: 690px;
+  isolation: isolate;height: 100vh;
   height: calc(100svh - var(--header-height, 86px));
   max-height: 960px;
   overflow: hidden;
@@ -720,6 +719,7 @@ button {
 /* Hero content */
 
 .hero-content{
+  width: 50%;
 position: absolute;
 left: 5%;
 top: 20%;
@@ -737,8 +737,18 @@ width: 50%;
 
 .hero-content h1{
   font-family: montserrat;
+  font-size: 40px;
 /* background-color: red; */
 }
+
+@media (max-width: 992px) {
+ .hero-content h1 {
+   font-size: 30px;
+  font-weight: 100;
+
+  }
+}
+
 
 
 
