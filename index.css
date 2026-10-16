@@ -1226,6 +1226,12 @@ button {
   background: #fff;
 }
 
+.megaminenews{
+  margin-top: 100px;
+}
+
+
+
 .gham-news__container {
   max-width: 1400px;
   margin-top: 100px;
@@ -1404,11 +1410,16 @@ button {
 
 @media (prefers-reduced-motion: reduce) {
   .gham-news__card,
+
   .gham-news__image img,
   .gham-news__read span,
   .gham-news__all span {
     transition: none;
   }
+}
+
+.megaminenewsheader{
+  font-weight: 500;
 }
 
 
@@ -2290,7 +2301,7 @@ button {
 .amandahbg {
   width: 100%;
   height: 700px;
-  background-image:linear-gradient(to left,rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("pics/Calm.png");
+  background-image:linear-gradient(to left,rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("pics/3.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2412,7 +2423,7 @@ button {
 ========================================= */
 
 .why-mega-grid {
-  
+
 }
 
 .why-mega-card {
@@ -2870,7 +2881,7 @@ button {
 .gham-faq__item summary {
   position: relative;
   padding: 22px 45px 22px 20px;
-  color: #2c2e56;
+  color: #515152;
   font-size: 15px;
   font-weight: 600;
   line-height: 1.5;
@@ -2972,7 +2983,7 @@ button {
   padding: 14px 20px;
   border: 0;
   border-radius: 4px;
-  background: #2c2e56;
+  background: #dd5800;
   color: #fff;
   font: inherit;
   font-size: 14px;
@@ -3255,7 +3266,7 @@ button {
 
     background: #f1f4f7;
 
-    color: #09285d;
+    color: #bf3900;
 
     font-size: 10px;
 
@@ -3268,7 +3279,7 @@ button {
 .faq-item.active .faq-icon {
     transform: rotate(180deg);
 
-    background: #09285d;
+    background: #c24400;
 
     color: #ffffff;
 }
@@ -3346,7 +3357,7 @@ button {
     width: 4px;
     height: 100%;
 
-    background: #d8a928;
+    background: #d66000;
 }
 
 
@@ -3541,7 +3552,7 @@ button {
 
     border-radius: 4px;
 
-    background: #09285d;
+    background: #d14600;
 
     color: #ffffff;
 
