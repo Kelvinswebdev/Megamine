@@ -2204,7 +2204,8 @@ button {
   }
 
   .network-heading h2 {
-    font-size: 35px;
+    font-size: 55px;
+    font-weight: normal;
     letter-spacing: -1.3px;
   }
 
