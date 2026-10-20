@@ -664,10 +664,14 @@ button {
 
 .about-hero {
   position: relative;
+  /* background-image: url("pics/Miners.webp"); */
   display: flex;
   align-items: center;
   min-height: 500px;
-  background: #20252b;
+  /* background: #20252b; */
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
   isolation: isolate;
 }
 
@@ -679,7 +683,7 @@ button {
 }
 
 .about-hero-image {
-  background-image: url("pics/about-industrial.jpg");
+  background-image: url("pics/GettyImages-1971871140.jpg");
   background-position: center;
   background-size: cover;
   filter: saturate(.75);
@@ -706,7 +710,7 @@ button {
   max-width: 850px;
   margin-top: 22px;
   color: #fff;
-  font-size: clamp(38px, 5.2vw, 70px);
+  font-size: 35px;
   font-weight: 600;
   line-height: 1.08;
   letter-spacing: -2.5px;
