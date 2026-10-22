@@ -635,13 +635,14 @@ button {
 .about-container {
   width: 1100px;
   margin-inline: auto;
+  padding: 40px;
 }
 
 .about-page h1,
 .about-page h2,
 .about-page h3 {
   color: var(--about-dark);
-  font-weight: 700;
+  font-weight: 100;
 }
 
 .about-page p {
