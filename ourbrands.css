@@ -651,9 +651,8 @@ button {
 }
 
 .brands-container {
-    width: 1100px;
+    max-width: 1100px;
     margin: auto;
-    /* background-color: red; */
 }
 
 .brands-section-label {
@@ -692,7 +691,7 @@ button {
     position: absolute;
     inset: 0;
     z-index: -2;
-    background-image: url("pics/shutterstock_1588933231.jpg");
+    background-image: url("pics/brands/brands-hero.jpg");
     background-position: center;
     background-size: cover;
     transform: scale(1.02);
@@ -1313,5 +1312,272 @@ button {
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
+    }
+}
+
+
+
+
+
+/* ################################################# logo carousel */
+
+
+
+/* =================================
+   MEGAMINE LOGO CAROUSEL
+================================= */
+
+.partner-carousel {
+    --orange: #c65b2a;
+    --charcoal: #292b2d;
+    --muted: #737983;
+    --border: #e6e7e8;
+    --container: 1320px;
+
+    padding: 85px 0;
+    background: #ffffff;
+    color: var(--charcoal);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+.partner-carousel *,
+.partner-carousel *::before,
+.partner-carousel *::after {
+    box-sizing: border-box;
+}
+
+.partner-container {
+    width: min(var(--container), calc(100% - 64px));
+    margin: 0 auto;
+}
+
+/* Heading */
+
+.partner-heading {
+    max-width: 680px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.partner-eyebrow {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: var(--orange);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.partner-heading h2 {
+    margin: 0 0 15px;
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -1.2px;
+}
+
+.partner-heading h2 span {
+    color: var(--orange);
+}
+
+.partner-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* Carousel viewport */
+
+.logo-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    /* Soft fade at both ends */
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 8%,
+        #000 92%,
+        transparent
+    );
+
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 8%,
+        #000 92%,
+        transparent
+    );
+}
+
+/* Moving track */
+
+.logo-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: logo-scroll 32s linear infinite;
+}
+
+/* Pause on hover or keyboard focus */
+
+.logo-carousel:hover .logo-track,
+.logo-carousel:focus-within .logo-track {
+    animation-play-state: paused;
+}
+
+/* Individual logo */
+
+.logo-slide {
+    display: flex;
+    flex: 0 0 220px;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    padding: 25px 38px;
+    margin-right: 12px;
+    border-right: 1px solid var(--border);
+}
+
+.logo-slide img {
+    display: block;
+    width: 100%;
+    max-width: 145px;
+    height: 65px;
+    object-fit: contain;
+
+    filter: grayscale(100%);
+    opacity: 0.65;
+
+    transition:
+        filter 0.3s ease,
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.logo-slide:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.06);
+}
+
+/* Seamless movement:
+   The duplicated logos make up the second half. */
+
+@keyframes logo-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Bottom caption */
+
+.partner-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 35px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.partner-footer-line {
+    width: 35px;
+    height: 1px;
+    background: var(--orange);
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+    .partner-carousel {
+        padding: 65px 0;
+    }
+
+    .partner-container {
+        width: calc(100% - 40px);
+    }
+
+    .partner-heading {
+        margin-bottom: 35px;
+    }
+
+    .logo-slide {
+        flex-basis: 175px;
+        height: 100px;
+        padding: 20px 28px;
+    }
+
+    .logo-slide img {
+        max-width: 120px;
+        height: 55px;
+    }
+
+    .logo-track {
+        animation-duration: 25s;
+    }
+}
+
+/* Small mobile */
+
+@media (max-width: 480px) {
+    .partner-heading h2 {
+        font-size: 29px;
+        letter-spacing: -0.8px;
+    }
+
+    .partner-heading p {
+        font-size: 12px;
+    }
+
+    .logo-slide {
+        flex-basis: 150px;
+        height: 90px;
+        padding: 18px 23px;
+    }
+
+    .logo-slide img {
+        max-width: 105px;
+        height: 48px;
+    }
+
+    .partner-footer {
+        gap: 10px;
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .partner-footer-line {
+        width: 20px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    .logo-track {
+        animation: none;
+        transform: none;
+    }
+
+    .logo-carousel {
+        overflow-x: auto;
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+
+    .logo-slide {
+        flex-basis: 150px;
     }
 }
