@@ -711,11 +711,22 @@ button {
   max-width: 850px;
   margin-top: 22px;
   color: #fff;
-  font-size: 35px;
-  font-weight: 600;
+  font-family: montserrat;
+  font-size: 40px;
   line-height: 1.08;
   letter-spacing: -2.5px;
 }
+
+
+
+@media (max-width: 992px) {
+ .about-hero h1 {
+   font-size: 30px;
+  font-weight: 100;
+
+  }
+}
+
 
 .about-hero-content > p {
   max-width: 640px;
