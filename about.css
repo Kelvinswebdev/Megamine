@@ -669,7 +669,7 @@ button {
   /* background-image: url("pics/Miners.webp"); */
   display: flex;
   align-items: center;
-  min-height: 500px;
+  height: 90vh;
   /* background: #20252b; */
   background-repeat: no-repeat;
   background-position: right;
