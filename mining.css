@@ -803,6 +803,73 @@ font-size: 13px;
 
 
 
+/* ############################################mine card */
+
+
+.minecard{
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  border: 1px solid rgb(218, 216, 216);
+  justify-content: space-between;
+  gap: 50px;
+
+}
+
+
+@media (max-width: 992px) {
+.minecard{
+  flex-direction: column;
+  width: 90%;
+  padding: 100px 30px;
+  /* background-color: red; */
+
+}
+
+  }
+
+.minecardright,.minecardleft{
+  width: 50%;
+}
+
+
+@media (max-width: 992px) {
+.minecardright,.minecardleft{
+  width: 100%;
+}
+
+  }
+
+.minecardright  img{
+  width: 100%;
+}
+
+.minecardleft p{
+  font-size: 13px;
+}
+
+
+.minecardleft button{
+  border: none;
+  border-radius: 30px;
+  margin-top: 10px;
+}
+
+.minecardbutton{
+  padding: 10px 30px;
+  text-decoration: none;
+  color: white;
+  background-color: orangered;
+  display: block;
+}
+
+
+
+
+
+
 
 
 
