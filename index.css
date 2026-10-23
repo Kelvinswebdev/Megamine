@@ -1553,6 +1553,9 @@ width: 50%;
 
 .who-visual {
   position: relative;
+  background-image: url("pics/hero3.jpg");
+  background-size: cover;
+  background-position: center;
   min-width: 0;
     border-radius: 10px;
   overflow: hidden;
@@ -1563,6 +1566,7 @@ width: 50%;
   position: absolute;
   inset: 0;
   width: 100%;
+  height: fit-content;
   object-fit: cover;
   object-position: center;
   transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
