@@ -1759,7 +1759,7 @@ width: 50%;
 
 @media (max-width: 1000px) {
   .who-we-are {
-    padding: 80px 0;
+    padding: 0px;
   }
 
   .who-container {
@@ -1779,11 +1779,11 @@ width: 50%;
 
 @media (max-width: 760px) {
   .who-we-are {
-    padding: 65px 0;
+    padding: 30px 0;
   }
 
   .who-container {
-    width: calc(100% - 40px);
+    width: 100%;
     grid-template-columns: 1fr;
     gap: 38px;
     padding: 0px 30px;
