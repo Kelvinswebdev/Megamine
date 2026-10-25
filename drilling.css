@@ -694,8 +694,8 @@ button {
 .about-hero-overlay {
   background: linear-gradient(
     90deg,
-    rgb(16 21 26 / 91%) 0%,
-    rgb(16 21 26 / 75%) 55%,
+    rgba(108, 32, 0, 0.91) 0%,
+    rgba(217, 107, 39, 0.75) 55%,
     rgb(16 21 26 / 30%) 100%
   );
 }
@@ -2472,7 +2472,7 @@ button {
 }
 
 .about-hero-image {
-  background-image: url("pics/mining.jpg");
+  /* background-image: url("pics/mining.jpg"); */
   background-position: center;
   background-size: cover;
   filter: saturate(.75);
@@ -4259,7 +4259,7 @@ button {
 }
 
 .about-hero-image {
-  background-image: url("pics/mining.jpg");
+  /* background-image: url("pics/mining.jpg"); */
   background-position: center;
   background-size: cover;
   filter: saturate(.75);
@@ -6046,7 +6046,7 @@ button {
 }
 
 .about-hero-image {
-  background-image: url("pics/mining.jpg");
+  /* background-image: url("pics/mining.jpg"); */
   background-position: center;
   background-size: cover;
   filter: saturate(.75);
@@ -7832,12 +7832,12 @@ button {
   z-index: -1;
 }
 
-.about-hero-image {
-  background-image: url("pics/many4.jpg");
+/* .about-hero-image {
+  background-image: url("pics/food.jpg");
   background-position: center;
   background-size: cover;
   filter: saturate(.75);
-}
+} */
 
 .about-hero-overlay {
   background: linear-gradient(
