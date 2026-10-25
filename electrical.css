@@ -685,7 +685,7 @@ button {
 }
 
 .about-hero-image {
-  background-image: url("pics/mining.jpg");
+  background-image: url("pics/electricalhero.jpg");
   background-position: center;
   background-size: cover;
   filter: saturate(.75);
@@ -694,8 +694,8 @@ button {
 .about-hero-overlay {
   background: linear-gradient(
     90deg,
-    rgb(16 21 26 / 91%) 0%,
-    rgb(16 21 26 / 75%) 55%,
+    rgba(108, 32, 0, 0.91) 0%,
+    rgba(217, 107, 39, 0.75) 55%,
     rgb(16 21 26 / 30%) 100%
   );
 }
