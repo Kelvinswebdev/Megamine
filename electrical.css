@@ -2472,7 +2472,7 @@ button {
 }
 
 .about-hero-image {
-  background-image: url("pics/mining.jpg");
+  /* background-image: url("pics/mining.jpg"); */
   background-position: center;
   background-size: cover;
   filter: saturate(.75);
@@ -4259,7 +4259,7 @@ button {
 }
 
 .about-hero-image {
-  background-image: url("pics/mining.jpg");
+  /* background-image: url("pics/mining.jpg"); */
   background-position: center;
   background-size: cover;
   filter: saturate(.75);
@@ -6046,7 +6046,7 @@ button {
 }
 
 .about-hero-image {
-  background-image: url("pics/mining.jpg");
+  /* background-image: url("pics/mining.jpg"); */
   background-position: center;
   background-size: cover;
   filter: saturate(.75);
@@ -7832,12 +7832,12 @@ button {
   z-index: -1;
 }
 
-.about-hero-image {
+/* .about-hero-image {
   background-image: url("pics/food.jpg");
   background-position: center;
   background-size: cover;
   filter: saturate(.75);
-}
+} */
 
 .about-hero-overlay {
   background: linear-gradient(
