@@ -685,7 +685,7 @@ button {
 }
 
 .about-hero-image {
-  background-image: url("pics/electricalhero.jpg");
+  background-image: url("pics/pneumaticheader.jpg");
   background-position: center;
   background-size: cover;
   filter: saturate(.75);
